@@ -11,7 +11,7 @@ The system aims to **empower employees** to manage their own leave requests effi
 ---
 
 ## Main Objectives
-1. Decrease the pressure on the Human Resources department.  
+1. Decrease the workload on the Human Resources department.  
 2. Empower employees to manage their own leave requests independently.
 
 ---
