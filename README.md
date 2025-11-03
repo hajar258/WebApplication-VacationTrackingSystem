@@ -1,22 +1,22 @@
 # 🗓️ Vacation Tracking System (VTS)
 
-## 📖 Vision
+## Vision
 The aim of the **Vacation Tracking System (VTS)** is to provide employees with a self-service platform to manage their leave requests — whether annual, sick, or day-off — **without direct involvement from the HR department**.
 
 ---
 
-## 🏢 Domain: Problem Statement
+## Domain
 The system aims to **empower employees** to manage their own leave requests efficiently, which in turn **reduces the administrative workload** on the HR department and **minimizes manual processing** of employee leave records.
 
 ---
 
-## 🎯 Objectives
+## Main Objectives
 1. Decrease the pressure on the Human Resources department.  
 2. Empower employees to manage their own leave requests independently.
 
 ---
 
-## ⚙️ Functional Requirements
+## Functional Requirements
 1. The system must authenticate all users using **Single Sign-On (SSO)**.  
 2. The system must authorize actions by roles — **Employee, HR, Admin, Manager** — users can only see actions allowed for their roles.  
 3. Retrieve employee details from HR systems.  
@@ -38,7 +38,7 @@ The system aims to **empower employees** to manage their own leave requests effi
 
 ---
 
-## 🚧 Constraints
+## Constraints
 1. The system will **not** be a standalone solution — it must be built as an **extension of the existing intranet portal**.  
 2. Authentication must use the **SSO mechanism**.  
 3. Only **HR clerks** and **Admins** can bypass validation rules.  
@@ -52,7 +52,7 @@ The system aims to **empower employees** to manage their own leave requests effi
 
 ---
 
-## 👥 Actors and Roles
+## Actors and Roles
 ### 1. Employees
 - Submit leave requests (annual, sick, or personal).  
 - View request history and balances.  
