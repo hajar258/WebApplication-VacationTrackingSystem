@@ -1,0 +1,44 @@
+
+
+participant Employee
+    participant VTS
+    participant Manager
+    participant HR
+    participant mailServer
+
+ Employee->VTS: Log in via SSO credentials
+ VTS-->>Employee: Authentication successful
+ VTS->>HR: Retrieve employee info
+ HR-->>VTS: Return employee info
+ VTS-->>Employee: Display dashboard with the details
+
+    %% Create New Request
+    Employee->>VTS: Raise a new request
+    VTS-->>Employee: Show leave types and calendar
+    Employee->>VTS: Enter type, dates, description
+    Employee->>VTS: Submit request
+
+    %% Validation
+    VTS->>VTS: Validate request 
+    alt Failed salidation
+        VTS-->>Employee: display validation errors
+    else Successful validation 
+        %% Check if approval required
+        VTS->>VTS: Check manager approval is required?
+        alt Auto-approve
+            VTS->>HR: Update leave balance
+            VTS->>mailServer: Send confirmation email to employee
+        else Requires approval
+            VTS->>Manager: Send approval email request
+            Manager->>VTS: Manager logs in
+            Manager->>VTS: Review pending request
+            alt Manager approves
+                Manager->>VTS: Approve request
+                VTS->>HR: Update leave balance
+                VTS->>mailServer: Notify employee of approval
+            else Manager rejects
+                Manager->>VTS: Reject request with reason
+                VTS->>mailServer: Notify employee of rejection
+            end
+        end
+    end
